@@ -164,22 +164,22 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-200 p-4 md:p-10">
-      <section className="mx-auto max-w-5xl border border-zinc-900 bg-zinc-100 p-4 md:p-8">
-        <header className="flex flex-wrap items-start justify-between gap-4 border-b border-zinc-300 pb-4">
+    <main className="min-h-screen bg-white px-4 py-6 md:px-8 md:py-10">
+      <section className="mx-auto max-w-6xl rounded-3xl border border-zinc-200 bg-white p-5 shadow-[0_20px_60px_-28px_rgba(15,23,42,0.25)] md:p-9">
+        <header className="flex flex-wrap items-start justify-between gap-4 border-b border-zinc-100 pb-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Focusly</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-zinc-400">Focusly</p>
             <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 md:text-5xl">Session Credit</h1>
           </div>
-          <div className="text-right">
+          <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-right shadow-sm">
             <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Credits</p>
             <p className="text-6xl font-medium leading-none text-zinc-950">{state.credits}</p>
           </div>
         </header>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          <article className="border border-zinc-300 bg-zinc-50 p-4 md:col-span-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Current Session</p>
+        <div className="mt-7 grid gap-5 md:grid-cols-3">
+          <article className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm md:col-span-2 md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">Current Session</p>
             <p className="mt-3 text-6xl font-medium tabular-nums text-zinc-950 md:text-7xl">
               {formatTimeLeft(remainingSeconds)}
             </p>
@@ -191,7 +191,7 @@ function App() {
                 type="button"
                 onClick={startSession}
                 disabled={!canPlay || state.sessionActive}
-                className="border border-zinc-900 bg-zinc-900 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-zinc-100 disabled:cursor-not-allowed disabled:border-zinc-400 disabled:bg-zinc-300"
+                className="rounded-xl border border-zinc-900 bg-zinc-900 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-zinc-100 transition hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-300 disabled:hover:translate-y-0 disabled:hover:shadow-none"
               >
                 Start Session
               </button>
@@ -199,15 +199,15 @@ function App() {
                 type="button"
                 onClick={stopSession}
                 disabled={!state.sessionActive}
-                className="border border-zinc-900 bg-transparent px-5 py-3 text-sm font-semibold uppercase tracking-wider text-zinc-900 disabled:cursor-not-allowed disabled:border-zinc-400 disabled:text-zinc-400"
+                className="rounded-xl border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold uppercase tracking-wider text-zinc-800 transition hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-sm disabled:cursor-not-allowed disabled:border-zinc-200 disabled:text-zinc-400 disabled:hover:translate-y-0 disabled:hover:shadow-none"
               >
                 End & Deduct
               </button>
             </div>
           </article>
 
-          <article className="border border-zinc-300 bg-zinc-50 p-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Stats</p>
+          <article className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">Stats</p>
             <dl className="mt-4 space-y-4">
               <div>
                 <dt className="text-xs uppercase tracking-[0.2em] text-zinc-500">Breaks</dt>
@@ -225,8 +225,8 @@ function App() {
           </article>
         </div>
 
-        <section className="mt-4 border border-zinc-300 bg-zinc-50 p-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Commit puzzle</p>
+        <section className="mt-5 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm md:p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">Commit puzzle</p>
           <p className="mt-2 text-sm text-zinc-700">
             If credits hit zero, solve the puzzle to continue: type the 5-letter word for deep concentration.
           </p>
@@ -240,13 +240,13 @@ function App() {
                 }))
               }
               placeholder="enter answer"
-              className="w-full border border-zinc-900 bg-zinc-100 px-4 py-3 text-zinc-900 placeholder:text-zinc-500 focus:outline-none"
+              className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-500 focus:outline-none"
             />
             <button
               type="button"
               onClick={solvePuzzle}
               disabled={!puzzleValid}
-              className="border border-zinc-900 bg-zinc-900 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-zinc-100 disabled:cursor-not-allowed disabled:border-zinc-400 disabled:bg-zinc-300"
+              className="rounded-xl border border-zinc-900 bg-zinc-900 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-zinc-100 transition hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-300 disabled:hover:translate-y-0 disabled:hover:shadow-none"
             >
               Submit
             </button>
